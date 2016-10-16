@@ -1,8 +1,11 @@
 git init
 git add . 
 git commit -m "commit"
-git remote add origin https://github.com/matszrmn/project_es.git
+git remote add origin https://github.com/wildwhitefox/project_es
 git push -u origin master
 
 
-git push -f origin master
+git push -f origin master (push se houver erro)
+
+
+git remote rm origin (remover)
