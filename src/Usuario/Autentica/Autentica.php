@@ -10,11 +10,6 @@
     $usuario = $_REQUEST['usuario'];
     $senha = $_REQUEST['senha'];
     
-    if($usuario==null) {
-        include('../../Usuario/Autentica/Autentica.html');
-        return;
-    }
-    
     $mensagemErro = '';
     
                   
@@ -22,26 +17,29 @@
         include('../../Admin/LogadoComSucesso.html');
         return;
     }
-    
     if ($usuario==null && $senha==null) {
         $connection -> close();
         $mensagemErro = 'Digite um usuario e uma senha';
         include('../../Usuario/Autentica/Autentica.html');
+        return;
     }
     else if(strpos($usuario, "'") !== false || strpos($senha, "'") !== false) {
         $connection -> close();
         $mensagemErro = 'Digite apenas caracteres alfanumericos nos campos';
         include('../../Usuario/Autentica/Autentica.html');
+        return;
     }
     else if($usuario==null) {
         $connection -> close();
         $mensagemErro = 'Digite um usuario ou email';
         include('../../Usuario/Autentica/Autentica.html');
+        return;
     }
     else if($senha==null) {
         $connection -> close();
         $mensagemErro = 'Digite uma senha';
         include('../../Usuario/Autentica/Autentica.html');
+        return;
     }
     else {
         $query = "SELECT *
@@ -103,4 +101,5 @@
             include('../../Usuario/LogadoComSucesso/LogadoComSucesso.html');
         }        
     }
+    //include ('../../Usuario/LogadoComSucesso/LogadoComSucesso.html')
 ?>
