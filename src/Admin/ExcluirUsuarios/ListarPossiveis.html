@@ -200,13 +200,6 @@
     </style>
 </head>
 
-<script>
-    var usuario = "<?php echo $_SESSION['usuario'];   ?>";
-    var compare = "<?php echo $_SESSION['usuario']; ?>";
-        
-    if(usuario!=compare) window.location.replace('../../Usuario/Autentica/Autentica.html'); //Interpretou codigo php como String, logo usuario nao esta logado
-</script>
-
 <body class="corpo">
     <div class="mensagemErro"><?php echo $mensagemErro; ?></div>
     <div class="mensagemSucesso"><?php echo $mensagemSucesso; ?></div>

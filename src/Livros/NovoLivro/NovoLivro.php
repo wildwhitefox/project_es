@@ -1,8 +1,8 @@
 <?php
-    $host = 'fdb15.biz.nf';
-    $user = '2155673_project';
-    $pass = 'Viruspc7@';
-    $db = '2155673_project';
+    $host = '127.0.0.1';
+    $user = 'lbdprojeto';                     
+    $pass = ''; 
+    $db = 'projeto';                            //Your database name you want to connect to
     $port = 3306;                               //The port #. It is always 3306
     
     $connection = mysqli_connect($host, $user, $pass, $db, $port)or die(mysql_error());

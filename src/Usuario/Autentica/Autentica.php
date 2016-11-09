@@ -14,7 +14,7 @@
     
                   
     if($usuario=='admin' && $senha=='admin') {
-        include('../../Admin/LogadoComSucesso.html');
+        include('/home/ubuntu/workspace/src/Admin/LogadoComSucesso.html');
         return;
     }
     if ($usuario==null && $senha==null) {
