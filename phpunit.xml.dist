@@ -1,0 +1,19 @@
+<phpunit
+    bootstrap="Test/phpunit/bootstrap.php"
+    colors="true"
+    backupGlobals="false"
+>
+    <testsuites>
+        <testsuite name="Test Suite">
+            <directory>Test/phpunit/Usario/Autentica</directory>
+	       <file>/Test/phpunit/Usario/Autentica/AutenticaTest.php</file>
+        </testsuite>
+    </testsuites>
+
+    <!-- Code Coverage Configuration -->
+    <filter>
+        <whitelist>
+            <directory suffix=".php">src/</directory>
+        </whitelist>
+    </filter>
+</phpunit>
