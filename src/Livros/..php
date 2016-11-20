@@ -1,32 +1,33 @@
 <?php
-$mine = [];
-$pedidos = [];
-$emprestados = [];
-$count = 0;
+
 function limpar() {
-  $mine = [];
+  /*$mine = [];
   $pedidos = [];
   $emprestados = [];
-  $count = 0;
+  $count = 0;*/
 }
 function adcionarLivro($usuario,$livro) {
-  $pedidos[$usuario][$livro] = true;
+//  $pedidos[$usuario][$livro] = true;
 }
 function pedir($usuario,$livro, $user2) {
-  if ($pedidos[$usuario] == null) $pedidos[$usuario] = [];
-  $pedidos[$usuario][$livro] = $user2;
+//  if ($pedidos[$usuario] == null) $pedidos[$usuario] = [];
+//  $pedidos[$usuario][$livro] = $user2;
 }
 function adicionarEmprestimo($proprietario, $usuario,$livro) {
-  if ($emprestados[$usuario] == null) $emprestados[$usuario] = [];
-  $emprestados[$usuario][$livro] = $usuario;
+//  if ($emprestados[$usuario] == null) $emprestados[$usuario] = [];
+//  $emprestados[$usuario][$livro] = $proprietario;
 }
 function adicionarDevolucao($proprietario, $usuario,$livro) {
-  if ($emprestados[$proprietario] == null) $emprestados[$proprietario] = [];
-  $emprestados[$proprietario][$livro] = $usuario;
+//  if ($emprestados[$proprietario] == null) $emprestados[$proprietario] = [];
+//  $emprestados[$proprietario][$livro] = $usuario;
 }
-
 function emprestar($usuario, $emprestarUsuarios, $action){
   usleep(150);
+  $pedidos = [
+    1 => ["livro1" => 2, "livro2" => 2, "livro3" => 3],
+    2 => ["livro4" => 1, "livro5" => 3],
+    3 => ["livro6" => 2]
+  ];
   if($emprestarUsuarios==null || $usuario==null || $action==null || gettype($emprestarUsuarios) != "array"|| gettype( $usuario) != "interger"|| gettype($action) != "string")
       return -1;
   if($action == 'remover') {
@@ -63,6 +64,10 @@ function emprestar($usuario, $emprestarUsuarios, $action){
 
 function excluir($usuario, $livrosPedidos) {
   usleep(150);
+  $pedidos = [
+    1 => ["livro1" => true, "livro2" => true, "livro3" => true],
+    2 => ["kamasutra" => true],
+  ];
   if($livrosPedidos==null || $usuario ==null || gettype($livrosPedidos) != "array" || gettype($usuario) != "integer")
   return -1;
   else {
@@ -77,6 +82,14 @@ function excluir($usuario, $livrosPedidos) {
 
 function  devolver($usuario, $livrosPedidos) {
   usleep(150);
+  $emprestados = [
+    2 => [
+     "livro1" => 1,
+     "livro2" => 3,
+     "livro3" => 4,
+     "livro4" => 5
+    ]
+  ];
   if($livrosPedidos==null || $usuario ==null || gettype($livrosPedidos) != "array") {
       return -1;
   }
@@ -91,6 +104,11 @@ function  devolver($usuario, $livrosPedidos) {
 
 function  deletarSolicitacoes($usuario, $livrosPedidos) {
   usleep(100);
+  $pedidos = [
+    1 => ["livro1" => 2, "livro2" => 2, "livro3" => 3],
+    2 => ["livro4" => 1, "livro5" => 3],
+    3 => ["livro6" => 2]
+  ];
   if($livrosPedidos==null || $usuario ==null) {
       return -1;
   }
@@ -103,6 +121,7 @@ function  deletarSolicitacoes($usuario, $livrosPedidos) {
 
 function cadastrarLivro($usuario, $titulo, $edicao, $editora, $autor, $genero){
   usleep(300);
+  if (!isset($count)) $GLOBALS["count"] = 0;
   if($usuario==null) {
       return -1;
   };
@@ -130,6 +149,11 @@ function cadastrarLivro($usuario, $titulo, $edicao, $editora, $autor, $genero){
 
 function pedirEmprestado($usuario, $pedinte, $livrosPedidos) {
   usleep(150);
+  $emprestados = [
+    1 => [
+     "best livro" => 2
+    ]
+  ];
   if($livrosPedidos==null || $usuario == null) {
       return -1;
   }
@@ -140,7 +164,7 @@ function pedirEmprestado($usuario, $pedinte, $livrosPedidos) {
       if($emprestados[$usuario][$livroPedido]) {
           $existeTupla=true;
       }
-      adicionarEmprestimo($usuario, $pedinte,$livroPedido);
+      $emprestado[$usuario][$livroPedido] = $pedinte;
   }
   if($existeTupla==true) {
       return 0;
@@ -151,6 +175,9 @@ function pedirEmprestado($usuario, $pedinte, $livrosPedidos) {
 }
 
 function removerDaLista($usuario,$usuariosDevolucoes) {
+  $pedidos =[
+    1 =>  ["algum livro" => 2, "outro livro" => 3]
+  ];
   if($usuariosDevolucoes==null || $usuario == null) {
       return -1;
   }

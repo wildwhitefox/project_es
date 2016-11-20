@@ -20,5 +20,4 @@ class PedirEmprestadoTest extends PHPUnit_Framework_TestCase {
   public function testPedirEmprestado4(){
      $this->assertEquals(-1, pedirEmprestado(null, 2, ["best livro"]));
   }
-
 }
