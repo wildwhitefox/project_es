@@ -6,6 +6,15 @@ services:
 before_script:
   - mysql -e 'create database projeto;'
 script: 
-  - phpunit AutenticaTest.php
-  - phpunit CriarContaTest.php
-  - phpunit DeletarTest.php
+  - phpunit Test/phpunit/Usuario/AutenticaTest.php
+  - phpunit Test/phpunit/Usuario/CriarContaTest.php
+  - phpunit Test/phpunit/Usuario/DeletarTest.php
+  - phpunit Test/phpunit/Admin/ExcluirTransacaoTest.php
+  - phpunit Test/phpunit/Admin/ExcluirUsuarioTest.php
+  - phpunit Test/phpunit/Livros/ExcluirTest.php
+  - phpunit Test/phpunit/Livros/CadastrarLivroTest.php
+  - phpunit Test/phpunit/Livros/DeletarSolicitacoesTest.php
+  - phpunit Test/phpunit/Livros/DevolverTest.php
+  - phpunit Test/phpunit/Livros/EmprestarTest.php
+  - phpunit Test/phpunit/Livros/PedirEmprestadoTest.php
+  - phpunit Test/phpunit/Livros/RemoverDaListaTest.php

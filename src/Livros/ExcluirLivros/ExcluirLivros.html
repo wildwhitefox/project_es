@@ -19,11 +19,11 @@
             position: absolute;
             right: 45%;
             top: 25%;
-            color:#FFFFFF; 
+            color:#FFFFFF;
             text-shadow:#000000 2px -2px, #000000 -2px 2px, #000000 2px 0px, #000000 0px -2px;
             font-size: 150%;
         }
-        
+
         .botaoExcluir {
             background:url(../../Imagens/lixeira.jpg);
             background-size:30%;
@@ -64,7 +64,7 @@
             top: 5%;
             cursor:pointer;
         }
-        
+
         .tabela1 {
             font-weight:bold;
             position: absolute;
@@ -125,7 +125,7 @@
             right:25%;
             top:85%;
         }
-        
+
         .mensagemErro {
             font-weight:bold;
             position: absolute;
@@ -161,7 +161,7 @@
             position: absolute;
             right: 8%;
             top: 45%;
-            color:#00FF00; 
+            color:#00FF00;
             text-shadow: 1px 1px 0 #000,
             -1px 1px 0 #000,
             1px -1px 0 #000,
@@ -193,7 +193,7 @@
 <script>
     var usuario = "<?php echo $_SESSION['usuario'];   ?>";
     var compare = "<?php echo $_SESSION['usuario']; ?>";
-        
+
     if(usuario!=compare) window.location.replace('../../Usuario/Autentica/Autentica.html'); //Interpretou codigo php como String, logo usuario nao esta logado
 </script>
 
@@ -201,7 +201,7 @@
     <div class="mensagemSucesso"><?php echo $mensagemSucesso;?></div>
     <div class="mensagemErro"><?php echo $mensagemErro;?></div>
     <div class="fraseExcluir">Excluir Livros</div>
-    
+
     <form method="post" action="ExcluirLivros.php">
         <input type="hidden" name="usuario" value=<?php echo $usuario; ?>>
         <input type="submit" value="    Atualizar" class="botaoAtualizar">
@@ -211,24 +211,24 @@
         <input type="hidden" name="transacao" value="MeusLivros.html">
         <input type="submit" value="   Voltar" class="botaoVoltar">
     </form>
-    <form method="post" action="ConfirmarExclusao.php">
-        <?php 
+    <form method="post" action="Buscar.php">
+        <?php
         $i=1;
         if($listaLivros!=null) {
             while ($row = mysqli_fetch_assoc($listaLivros)): ?>
-    
+
             <div class='<?php echo ("tabela{$i}"); ?>'>
-                <?php echo ("<font class='borda'>Titulo: </font>".$row['Titulo']." &nbsp; 
-                             <font class='borda'>Autor: </font>".$row['Autor']." &nbsp; 
-                             <font class='borda'>Editora: </font>".$row['Editora']." &nbsp; 
-                             <font class='borda'>Edicao: </font>".$row['Edicao']." &nbsp; 
-                             <font class='borda'>Genero: </font>".$row['Genero']); 
+                <?php echo ("<font class='borda'>Titulo: </font>".$row['Titulo']." &nbsp;
+                             <font class='borda'>Autor: </font>".$row['Autor']." &nbsp;
+                             <font class='borda'>Editora: </font>".$row['Editora']." &nbsp;
+                             <font class='borda'>Edicao: </font>".$row['Edicao']." &nbsp;
+                             <font class='borda'>Genero: </font>".$row['Genero']);
                 ?>
                 <input type="checkbox" name="IDLivro[]" value=<?php echo $row['ID'];?>>
             </div>
         <?php
             $i=$i+1;
-            endwhile; 
+            endwhile;
         }?>
         <input type="hidden" name="usuario" value=<?php echo $usuario; ?>>
         <input type="submit" value="     Excluir" class="botaoExcluir">

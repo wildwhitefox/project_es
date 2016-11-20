@@ -1,6 +1,6 @@
 <?php
 
-    function check($nome,$email,$usuario,$telefone,$senha,$repeticaoSenha) {
+function check($nome,$email,$usuario,$telefone,$senha,$repeticaoSenha) {
 
     if(!is_numeric($telefone) && $telefone!=null) {
         return -1;
@@ -24,12 +24,12 @@
         return -3;
     }
     return insere($email,$usuario);
-    }
+}
 function insere($email,$usuario) {
-	if ($email=="valido@fake.com") {
+	if ($email=="usado@fake.com") {
 		return -4;
 	}
-	if ($usuario=="valido"){
+	if ($usuario=="usado"){
 		return -5;
 	}
 	return 1;
