@@ -16,7 +16,7 @@ function excluirUsario($usuarios) {
   $users = ["valido1","valido2","valido3"];
   if($usuarios==null || gettype($usuarios) != "array") return -1;
   foreach($usuarios as $k => $usuario) {
-    if (gettype($usario) != "string" ) return -2;
+    if (gettype($usuario) != "string" ) return -2;
     if (!isset($users[$usuario])) return 0;
     $users[$usuario] = null;
   }

@@ -1,6 +1,6 @@
 <?php
 
-function limpar() {
+function limpa() {
   /*$mine = [];
   $pedidos = [];
   $emprestados = [];
@@ -121,7 +121,6 @@ function  deletarSolicitacoes($usuario, $livrosPedidos) {
 
 function cadastrarLivro($usuario, $titulo, $edicao, $editora, $autor, $genero){
   usleep(300);
-  if (!isset($count)) $GLOBALS["count"] = 0;
   if($usuario==null) {
       return -1;
   };
@@ -137,12 +136,7 @@ function cadastrarLivro($usuario, $titulo, $edicao, $editora, $autor, $genero){
       return -3;
   }
   else {
-      if($count >= 10) {
-          return 0;
-      }
-      else {
-          $count=$count+1;
-          return 1;
+      return 1;
       }
   }
 }
