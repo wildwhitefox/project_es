@@ -2,20 +2,15 @@
 
 class DeletarTest extends PHPUnit_Framework_TestCase {
     protected function setUp()
-    {
-          addUsuario("valido", "valido  jacinto","senhasupervalidaesegura","valido@valido.com",36660666)
-    }
+          addUsuario("valido", "valido  jacinto","senhasupervalidaesegura","valido@valido.com",36660666);
 
-    protected function tearDown()
-    {
+    protected function tearDown(){
         remove();
     }
-    public function testDeletaInvalido()
-    {
+    public function testDeletaInvalido(){
         $this->assertEquals(-1, deleta(null));
-     }
-public function testDeletaValido()
-    {
+    }
+    public function testDeletaValido(){
         $this->assertEquals(1, deleta("valido"));
     }
 }
