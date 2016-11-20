@@ -39,7 +39,7 @@ function emprestar($usuario, $emprestarUsuarios, $action){
         $usuarioPedidoID = $stringDuplicada[0];
         $livroPedido = $stringDuplicada[1];
 
-        if (!($pedidos[$usuario][$livroPedido] == $usuarioPedidoID))
+        if (!isset($pedidos[$usuario][$livroPedido]) || !($pedidos[$usuario][$livroPedido] == $usuarioPedidoID))
           return 0;
         $pedidos[$usuario][$livroPedido] = null;
     }
@@ -54,7 +54,7 @@ function emprestar($usuario, $emprestarUsuarios, $action){
         $stringDuplicada = explode("'",$stringDuplicada);
         $livroPedido = $stringDuplicada[1];
 
-        if ($mine[$livroPedido] == null) return 0;
+        if (!isset($mine[$livroPedido])) return 0;
         $mine[$livroPedido] = null;
     }
     return 1;
@@ -72,7 +72,7 @@ function excluir($usuario, $livrosPedidos) {
   return -1;
   else {
     foreach($livrosPedidos as $k => $livro) {
-        if ($pedidos[$usuario][$livro] == null)
+        if (!isset($pedidos[$usuario][$livro]) || $pedidos[$usuario][$livro] == null)
           return 0;
         $pedidos[$usuario][$livro] = null;
     }
@@ -95,7 +95,7 @@ function  devolver($usuario, $livrosPedidos) {
   }
   foreach($livrosPedidos as $k => $livroPedido) {
       $proprietario = $emprestados[$usuario][$livroPedido];
-      if($proprietario == null)
+      if(!isset($proprietario) || $proprietario == null)
         return 0;
       $emprestados[$usuario][$livroPedido] = null;
   }
@@ -113,7 +113,7 @@ function  deletarSolicitacoes($usuario, $livrosPedidos) {
       return -1;
   }
   foreach($livrosPedidos as $k => $livroPedido) {
-      if ($pedidos[$usuario][$livroPedido] == null) return 0;
+      if (!isset($pedidos[$usuario][$livroPedido]) || $pedidos[$usuario][$livroPedido] == null) return 0;
       $pedidos[$usuario][$livroPedido] == null;
   }
   return 1;
@@ -161,7 +161,7 @@ function pedirEmprestado($usuario, $pedinte, $livrosPedidos) {
   $existeTupla = false;
   foreach($livrosPedidos as $k => $livroPedido) {
 
-      if($emprestados[$usuario][$livroPedido]) {
+      if(isset($emprestados[$usuario][$livroPedido]) && $emprestados[$usuario][$livroPedido] != null) {
           $existeTupla=true;
       }
       $emprestado[$usuario][$livroPedido] = $pedinte;
@@ -189,7 +189,7 @@ function removerDaLista($usuario,$usuariosDevolucoes) {
 
       $usuarioDevolveuID = $stringDuplicada[0];
       $livroDevolveuID = $stringDuplicada[1];
-      if (!($pedidos[$usuario][$livroDevolveuID] == $usuarioDevolveuID))
+      if (!isset($pedidos[$usuario][$livroDevolveuID])|| !($pedidos[$usuario][$livroDevolveuID] == $usuarioDevolveuID))
         return 0;
       $pedidos[$usuario][$livroDevolveuID] = null;
   }
