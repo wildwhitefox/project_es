@@ -1,4 +1,6 @@
 <?php
+$users = [];
+$trans = [];
 function addUsuario($usuario, $nome,$senha,$email,$telefone) {
   if (!$GLOBALS["users"]) $GLOBALS["users"] = [];
   $users[$usuario] =true;
