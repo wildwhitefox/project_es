@@ -74,7 +74,7 @@ function excluir($usuario, $livrosPedidos) {
     foreach($livrosPedidos as $k => $livro) {
         if (!isset($pedidos[$usuario][$livro]) || $pedidos[$usuario][$livro] == null)
           return 0;
-        $pedidos[$usuario][$livro] = null;
+        else $pedidos[$usuario][$livro] = null;
     }
     return 1;
   }
@@ -97,7 +97,7 @@ function  devolver($usuario, $livrosPedidos) {
       $proprietario = $emprestados[$usuario][$livroPedido];
       if(!isset($proprietario) || $proprietario == null)
         return 0;
-      $emprestados[$usuario][$livroPedido] = null;
+      else $emprestados[$usuario][$livroPedido] = null;
   }
   return 1;
 }
@@ -114,7 +114,7 @@ function  deletarSolicitacoes($usuario, $livrosPedidos) {
   }
   foreach($livrosPedidos as $k => $livroPedido) {
       if (!isset($pedidos[$usuario][$livroPedido]) || $pedidos[$usuario][$livroPedido] == null) return 0;
-      $pedidos[$usuario][$livroPedido] == null;
+      else $pedidos[$usuario][$livroPedido] = null;
   }
   return 1;
 }
@@ -184,7 +184,7 @@ function removerDaLista($usuario,$usuariosDevolucoes) {
       $livroDevolveuID = $stringDuplicada[1];
       if (!isset($pedidos[$usuario][$livroDevolveuID])|| !($pedidos[$usuario][$livroDevolveuID] == $usuarioDevolveuID))
         return 0;
-      $pedidos[$usuario][$livroDevolveuID] = null;
+      else $pedidos[$usuario][$livroDevolveuID] = null;
   }
   return 1;
 }

@@ -13,7 +13,7 @@ function remove(){
   $trans = [];*/
 }
 function excluirUsario($usuarios) {
-  $users = ["valido1","valido2","valido3"];
+  $users = ["valido1" => true,"valido2" => true,"valido3" => true];
   if($usuarios==null || gettype($usuarios) != "array") return -1;
   foreach($usuarios as $k => $usuario) {
     if (gettype($usuario) != "string" ) return -2;
