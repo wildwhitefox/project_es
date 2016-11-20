@@ -12,8 +12,8 @@ function remove(){
   $trans = [];
 }
 function excluirUsario($usuarios) {
-  if($usuariosPedidos==null || gettype($usuariosPedidos) != "array") return -1;
-  foreach($usuariosPedidos as $k => $usuario) {
+  if($usuarios==null || gettype($usuarios) != "array") return -1;
+  foreach($usuarios as $k => $usuario) {
     if (gettype($usario) != "string" ) return -2;
     if (!$users[$usuario]) return 0;
     $users[$usuario] = null;
