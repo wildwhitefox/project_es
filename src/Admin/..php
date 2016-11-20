@@ -2,11 +2,11 @@
 $users = [];
 $trans = [];
 function addUsuario($usuario, $nome,$senha,$email,$telefone) {
-  if (!$GLOBALS["users"]) $GLOBALS["users"] = [];
+  if (!isset($user)) $GLOBALS["users"] = [];
   $users[$usuario] =true;
 }
 function addtransacao($t) {
-  if (!$GLOBALS["trans"]) $GLOBALS["trans"] = [];
+  if (!isset("trans")) $GLOBALS["trans"] = [];
   $trans[$t] =true;
 }
 function remove(){
@@ -26,7 +26,6 @@ function excluirUsario($usuarios) {
 function excluirTransacao($transacoes) {
   if($transacoes==null || gettype($transacoes) != "array") return -1;
   foreach($transacoes as $k => $t) {
-    print(gettype($t));
     if (gettype($t) != "integer" ) return -2;
     if (!$trans[$t]) return 0;
     $trans[$t] = null;
