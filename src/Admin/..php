@@ -25,7 +25,7 @@ function excluirTransacao($transacoes) {
   if($transacoes==null || gettype($transacoes) != "array") return -1;
   foreach($transacoes as $k => $t) {
     print(gettype($t));
-    if (gettype($t) != "interger" ) return -2;
+    if (gettype($t) != "integer" ) return -2;
     if (!$trans[$t]) return 0;
     $trans[$t] = null;
   }
