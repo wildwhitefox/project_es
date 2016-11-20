@@ -6,7 +6,7 @@ function addUsuario($usuario, $nome,$senha,$email,$telefone) {
   $users[$usuario] =true;
 }
 function addtransacao($t) {
-  if (!isset("trans")) $GLOBALS["trans"] = [];
+  if (!isset($trans)) $GLOBALS["trans"] = [];
   $trans[$t] =true;
 }
 function remove(){
