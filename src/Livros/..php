@@ -7,19 +7,19 @@ function limpa() {
   $count = 0;*/
 }
 function adcionarLivro($usuario,$livro) {
-//  $pedidos[$usuario][$livro] = true;
+  //  $pedidos[$usuario][$livro] = true;
 }
 function pedir($usuario,$livro, $user2) {
-//  if ($pedidos[$usuario] == null) $pedidos[$usuario] = [];
-//  $pedidos[$usuario][$livro] = $user2;
+  //  if ($pedidos[$usuario] == null) $pedidos[$usuario] = [];
+  //  $pedidos[$usuario][$livro] = $user2;
 }
 function adicionarEmprestimo($proprietario, $usuario,$livro) {
-//  if ($emprestados[$usuario] == null) $emprestados[$usuario] = [];
-//  $emprestados[$usuario][$livro] = $proprietario;
+  //  if ($emprestados[$usuario] == null) $emprestados[$usuario] = [];
+  //  $emprestados[$usuario][$livro] = $proprietario;
 }
 function adicionarDevolucao($proprietario, $usuario,$livro) {
-//  if ($emprestados[$proprietario] == null) $emprestados[$proprietario] = [];
-//  $emprestados[$proprietario][$livro] = $usuario;
+  //  if ($emprestados[$proprietario] == null) $emprestados[$proprietario] = [];
+  //  $emprestados[$proprietario][$livro] = $usuario;
 }
 function emprestar($usuario, $emprestarUsuarios, $action){
   usleep(150);
@@ -137,7 +137,6 @@ function cadastrarLivro($usuario, $titulo, $edicao, $editora, $autor, $genero){
   }
   else {
       return 1;
-      }
   }
 }
 
