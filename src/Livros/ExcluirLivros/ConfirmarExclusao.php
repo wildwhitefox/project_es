@@ -39,7 +39,7 @@ function excluir($livrosPedidos,$usuario) {
 
     include('ExcluirLivros.html');
 }
-if($_ENV["TRAVIS"] == null || !$_ENV["TRAVIS"]) {
+if(!isset($_ENV["TRAVIS"]) || !$_ENV["TRAVIS"]) {
     $livrosPedidos = $_REQUEST['IDLivro'];
     $usuario = $_REQUEST['usuario'];
     excluir($livrosPedidos,$usuario);
