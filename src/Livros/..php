@@ -45,9 +45,8 @@ function emprestar($usuario, $emprestarUsuarios, $action){
     }
     return 1;
   }
-
   elseif($action == 'aceita'){
-
+    $mine =["livro3" => 3];
     foreach($emprestarUsuarios as $k => $emprestarLivro) {
         if (gettype($emprestarLivro) != "string") return -1;
         $stringDuplicada = $emprestarLivro;

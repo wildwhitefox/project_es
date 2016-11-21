@@ -32,16 +32,16 @@ class EmprestarTest extends PHPUnit_Framework_TestCase {
       $this->assertEquals(0, emprestar(3,["1'livro7"], "remover"));
   }
   public function testEmprestar7(){
-      $this->assertEquals(-1, emprestar("a",["2'livro6","2'livro6"], "remove"));
+      $this->assertEquals(-1, emprestar("a",["2'livro6","2'livro6"], "remover"));
   }
   public function testEmprestar8(){
       $this->assertEquals(-1, emprestar(3,["2'livro6","2'livro6"], null));
   }
   public function testEmprestar9(){
-      $this->assertEquals(-1, emprestar(3,1, "remove"));
+      $this->assertEquals(-1, emprestar(3,1, "remover"));
   }
   public function testEmprestar10(){
-      $this->assertEquals(0, emprestar(3,["2'livro6","2'livro6"], 0));
+      $this->assertEquals(-1, emprestar(3,["2'livro6","2'livro6"], 0));
   }
 
 }
