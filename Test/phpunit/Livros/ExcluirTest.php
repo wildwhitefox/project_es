@@ -5,7 +5,7 @@ class ExcluirTest extends PHPUnit_Framework_TestCase {
       adcionarLivro(1,"livro1");
       adcionarLivro(1,"livro2");
       adcionarLivro(1,"livro3");
-      adcionarLivro(2,"kamasutra");
+      adcionarLivro(2,"guiness");
   }
 
   protected function tearDown(){
@@ -15,7 +15,7 @@ class ExcluirTest extends PHPUnit_Framework_TestCase {
       $this->assertEquals(1, excluir(1,["livro1"]));
   }
   public function testExcluir1(){
-      $this->assertEquals(0, excluir(1,["kamasutra"]));
+      $this->assertEquals(0, excluir(1,["guiness"]));
   }
   public function testExcluir3(){
       $this->assertEquals(0, excluir(1,["livro2","livro3","livro2"]));
