@@ -65,7 +65,7 @@ function excluir($usuario, $livrosPedidos) {
   usleep(150);
   $pedidos = [
     1 => ["livro1" => true, "livro2" => true, "livro3" => true],
-    2 => ["kamasutra" => true],
+    2 => ["guiness" => true],
   ];
   if($livrosPedidos==null || $usuario ==null || gettype($livrosPedidos) != "array" || gettype($usuario) != "integer")
   return -1;
