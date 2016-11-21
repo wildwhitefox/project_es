@@ -16,7 +16,7 @@ class DevolverTest extends PHPUnit_Framework_TestCase {
       $this->assertEquals(1,  devolver(2, ["livro2", "livro3"]));
   }
   public function testDevolver1(){
-      $this->assertEquals(0, devolver(2, ["livro4", "livro3"]));
+      $this->assertEquals(0, devolver(2, ["livro4", "livro3","livro3"]));
   }
   public function testDevolver3(){
       $this->assertEquals(0, devolver(2,["livro4","livro2","livro3","livro4"]));

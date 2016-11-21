@@ -28,7 +28,7 @@ function emprestar($usuario, $emprestarUsuarios, $action){
     2 => ["livro4" => 1, "livro5" => 3],
     3 => ["livro6" => 2]
   ];
-  if($emprestarUsuarios==null || $usuario==null || $action==null || gettype($emprestarUsuarios) != "array"|| gettype( $usuario) != "interger"|| gettype($action) != "string")
+  if($emprestarUsuarios==null || $usuario==null || $action==null || gettype($emprestarUsuarios) != "array"|| gettype( $usuario) != "integer"|| gettype($action) != "string")
       return -1;
   if($action == 'remover') {
     foreach($emprestarUsuarios as $k => $emprestarLivro) {
@@ -54,8 +54,8 @@ function emprestar($usuario, $emprestarUsuarios, $action){
         $stringDuplicada = explode("'",$stringDuplicada);
         $livroPedido = $stringDuplicada[1];
 
-        if (!isset($mine[$livroPedido])) return 0;
-        $mine[$livroPedido] = null;
+        if (!isset($mine[$livroPedido]) || $mine[$livroPedido] == null ) return 0;
+        else $mine[$livroPedido] = null;
     }
     return 1;
   }

@@ -14,22 +14,22 @@ class EmprestarTest extends PHPUnit_Framework_TestCase {
       limpa();
   }
   public function testEmprestar0(){
-      $this->assertEquals(1, emprestar(1,["2'livro1","2'livro2"], "remove"));
+      $this->assertEquals(1, emprestar(1,["2'livro1","2'livro2"], "remover"));
   }
   public function testEmprestar1(){
       $this->assertEquals(1, emprestar(1,["3'livro3"], "aceita"));
   }
   public function testEmprestar3(){
-      $this->assertEquals(0, emprestar(3,["2'livro6","2'livro6"], "remove"));
+      $this->assertEquals(0, emprestar(3,["2'livro6","2'livro6"], "remover"));
   }
   public function testEmprestar4(){
       $this->assertEquals(-1, emprestar(2,["1'livro3"], "invalido"));
   }
   public function testEmprestar5(){
-      $this->assertEquals(0, emprestar(3,["2'livro6","2'livro6"], "remove"));
+      $this->assertEquals(0, emprestar(3,["2'livro6","2'livro6"], "remover"));
   }
   public function testEmprestar6(){
-      $this->assertEquals(0, emprestar(3,["1'livro7"], "remove"));
+      $this->assertEquals(0, emprestar(3,["1'livro7"], "remover"));
   }
   public function testEmprestar7(){
       $this->assertEquals(-1, emprestar("a",["2'livro6","2'livro6"], "remove"));
