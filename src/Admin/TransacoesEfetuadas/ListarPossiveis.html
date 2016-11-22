@@ -246,8 +246,10 @@
                 echo ("<font class='borda'>ID: </font>".$row['ID']." &nbsp; 
                        <font class='borda'>Proprietario: </font>".$row['Proprietario']." &nbsp; 
                        <font class='borda'>Prop. Tel: </font>".$row['Prop_Tel']." &nbsp; 
-                       <font class='borda'>Beneficiado: </font>".$row['Beneficiado']." &nbsp; 
-                       <font class='borda'>Benef. Tel: </font>".$row['Benef_Tel']." &nbsp;"); 
+                       <font class='borda'>Beneficiado: </font>".$row['Beneficiado']." &nbsp;
+                       <font class='borda'>Benef. Tel: </font>".$row['Benef_Tel']." &nbsp;
+                       <font class='borda'>Tipo de Transacao: </font>".$row['Tipo_Transacao']." &nbsp;
+                       <font class='borda'>Data: </font>".$row['Data_Transacao']." &nbsp;"); 
                 ?>
                 <input type="checkbox" name="IDTransacao[]" value=<?php echo $row['ID'];?>>
         </div>

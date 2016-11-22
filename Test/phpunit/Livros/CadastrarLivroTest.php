@@ -16,7 +16,7 @@ class CadastrarLivroTest extends PHPUnit_Framework_TestCase {
     }
     public function testCadastrarLivro1(){
         $titulo =null;
-        $this->assertEquals(-1, cadastrarLivro(1, $titulo, 3, "abril", "pessoa", "ficção"));          //ERRO - Titulo nulo
+        $this->assertEquals(-1, cadastrarLivro(1, $titulo, 3, "abril", "pessoa", "ficção"));          //ERRO - Livro nulo
     }
     public function testCadastrarLivro3(){
         $this->assertEquals(-2, cadastrarLivro(1, "livro2''", 3, "abri'l", "pessoa'", "fi'cção"));    //ERRO - Caracter ' invalido
