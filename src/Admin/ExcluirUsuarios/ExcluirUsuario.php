@@ -41,13 +41,19 @@
     
     foreach($usuariosPedidos as $k => $usuarioPedido) {
         $query = "DELETE
-                  FROM Usuario
-                  WHERE ID='".$usuarioPedido."';";
-        $query2 = "DELETE
                    FROM Livro
                    WHERE Proprietario='".$usuarioPedido."'";
-        if ($connection->query($query) === TRUE && $connection->query($query2) === TRUE) $mensagemSucesso = "Usuario(s) excluido(s)!";
-        else $mensagemErro = "Este usuario ja foi excluido";
+        $query2 = "DELETE
+                   FROM Livros_Adquiridos
+                   WHERE Usuario_ID='".$usuarioPedido."';";
+        $query3 = "DELETE
+                  FROM Usuario
+                  WHERE ID='".$usuarioPedido."';";
+        if ($connection->query($query) === TRUE) {
+            if($connection->query($query2) === TRUE && $connection->query($query3) === TRUE) $mensagemSucesso = "Usuario(s) excluido(s)!";
+            else $mensagemErro = "Ainda nao foram excluidas as transacoes do usuario";
+        }
+        else $mensagemErro = "Ainda nao foram excluidas as transacoes do usuario";
     }
     
     $primeiroElemento = ($paginaAtual-1)*10;
